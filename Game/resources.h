@@ -85,6 +85,7 @@ class Resources final {
 
     static const GthFont& dialogFont();
     static const GthFont& font();
+    static const GthFont& warningFont();
     static const GthFont& font(FontType type);
     static const GthFont& font(const char *fname,FontType type = FontType::Normal);
 

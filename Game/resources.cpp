@@ -167,6 +167,10 @@ const GthFont& Resources::font() {
   return font("font_old_10_white.tga",FontType::Normal);
   }
 
+const GthFont& Resources::warningFont() {
+    return font("font_old_20_white.tga", FontType::Hi);
+}
+
 const GthFont &Resources::font(Resources::FontType type) {
   return font("font_old_10_white.tga",type);
   }

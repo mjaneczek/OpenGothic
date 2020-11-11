@@ -602,15 +602,13 @@ void InventoryMenu::drawSlot(Painter &p, DrawPass pass, const Page &inv, const P
 void InventoryMenu::drawGold(Painter &p, Npc &player, int x, int y) {
   if(!slot)
     return;
-  auto           w    = world();
-  auto*          txt  = w ? w->script().currencyName() : nullptr;
   const size_t   gold = player.inventory().goldCount();
   char           vint[64]={};
-  if(txt==nullptr)
-    txt="Gold";
-
-  std::snprintf(vint,sizeof(vint),"%s : %u",txt,uint32_t(gold));
+  std::snprintf(vint,sizeof(vint),"Hajs: %u",uint32_t(gold));
   drawHeader(p,vint,x,y);
+
+  auto& fnt = Resources::warningFont();
+  fnt.drawText(p, (w()/2)-250, h()/3, 500, 50, "<> TNC <>", AlignVCenter | AlignHCenter);
   }
 
 void InventoryMenu::drawHeader(Painter &p,const char* title, int x, int y) {
