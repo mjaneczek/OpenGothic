@@ -24,6 +24,10 @@ std::u16string InstallDetect::detectG2() {
   auto steam = pfiles+u"/Steam/steamapps/common/Gothic II/";
   if(FileUtil::exists(steam))
     return steam;
+  auto d_gothic = u"D:/Gothic";
+  if (FileUtil::exists(d_gothic))
+     return d_gothic;
+
   return u"";
   }
 
